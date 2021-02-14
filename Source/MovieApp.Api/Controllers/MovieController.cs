@@ -5,7 +5,7 @@ using MovieApp.Application.Features.MovieFeatures;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace MovieApp.Controllers
+namespace MovieApp.Api.Controllers
 {
     [ApiController]
     [Route("api/movies")]

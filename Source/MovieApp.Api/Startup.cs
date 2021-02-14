@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MovieApp.Core;
+using MovieApp.Core.Domain;
 using MovieApp.Data;
 using System;
 
@@ -26,6 +29,19 @@ namespace MovieApp.Api
         {
 
             services.AddControllers();
+
+            services.AddTransient<IStartupFilter, SettingValidationStartupFilter>();
+
+            // Bind the configuration using IOptions
+            services.Configure<MovieConfig>(Configuration.GetSection("MovieConfig"));
+
+            // Explicitly register the settings object so IOptions not required (optional)
+            services.AddSingleton(resolver =>
+                resolver.GetRequiredService<IOptions<MovieConfig>>().Value);
+
+            // Register as an IValidatable
+            services.AddSingleton<IValidatable>(resolver =>
+                resolver.GetRequiredService<IOptions<MovieConfig>>().Value);
 
             services.AddScoped(typeof(IRepository<>), typeof(FileRepository<>));
 
