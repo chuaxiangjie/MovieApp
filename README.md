@@ -39,18 +39,17 @@ Ensure the movie json file path is specified
 
 #### Run
 
-<img src="https://user-images.githubusercontent.com/5947398/107878586-b3b2d900-6f0e-11eb-99d1-bb5bae0823aa.png" width="600" />
+<img src="https://user-images.githubusercontent.com/5947398/107893933-d07bfa80-6f68-11eb-8163-60657e3cb897.png" width="600" />
 
 
-#### View web application
+#### View Swagger
 
-<img src="https://user-images.githubusercontent.com/5947398/107878836-1bb5ef00-6f10-11eb-850e-539f29f28098.png" width="600" />
+<img src="https://user-images.githubusercontent.com/5947398/107893980-0e791e80-6f69-11eb-86b8-f04b45b8425f.png" width="600" />
 
 
 ## Features
 
-* Movie search
-* Inifinite Scroll
+* Api - Query Movies
 
 ## Built With
 
